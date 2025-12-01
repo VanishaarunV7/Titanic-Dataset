@@ -17,16 +17,16 @@ parch = st.number_input("Parents/Children Aboard", min_value=0, max_value=10, va
 fare = st.number_input("Fare", min_value=0.0, max_value=600.0, value=32.2)
 embarked = st.selectbox("Embarked", ["C", "Q", "S"])
 
-# Encoding categorical features manually
+# Encoding categorical features
 sex_male = 1 if sex == "male" else 0
 embarked_Q = 1 if embarked == "Q" else 0
 embarked_S = 1 if embarked == "S" else 0
 
-# New feature engineering (same as training)
+# Feature engineering
 familysize = sibsp + parch
 isalone = 1 if familysize == 0 else 0
 
-# Input DataFrame
+# Construct input in EXACT training column order
 input_data = pd.DataFrame([{
     'Pclass': pclass,
     'Age': age,
@@ -40,16 +40,23 @@ input_data = pd.DataFrame([{
     'Embarked_S': embarked_S
 }])
 
-# Scale numerical columns
+# Ensure correct column order
+ordered_columns = [
+    'Pclass', 'Age', 'SibSp', 'Parch', 'Fare',
+    'FamilySize', 'IsAlone', 'Sex_male', 'Embarked_Q', 'Embarked_S'
+]
+
+input_data = input_data[ordered_columns]
+
+# Scale numeric columns
 num_cols = ['Pclass', 'Age', 'SibSp', 'Parch', 'Fare', 'FamilySize', 'IsAlone']
 input_data[num_cols] = scaler.transform(input_data[num_cols])
 
-# Predict button
+# Prediction
 if st.button("Predict"):
     pred = model.predict(input_data)[0]
-    
+
     if pred == 1:
         st.success("🟢 Passenger Survived!")
     else:
         st.error("🔴 Passenger Did NOT Survive.")
-
