@@ -26,7 +26,7 @@ embarked_S = 1 if embarked == "S" else 0
 familysize = sibsp + parch
 isalone = 1 if familysize == 0 else 0
 
-# Construct input in EXACT training column order
+# Construct input in training column order
 input_data = pd.DataFrame([{
     'Pclass': pclass,
     'Age': age,
@@ -40,19 +40,17 @@ input_data = pd.DataFrame([{
     'Embarked_S': embarked_S
 }])
 
-# Ensure correct column order
-ordered_columns = [
-    'Pclass', 'Age', 'SibSp', 'Parch', 'Fare',
-    'FamilySize', 'IsAlone', 'Sex_male', 'Embarked_Q', 'Embarked_S'
-]
-input_data = input_data[ordered_columns]
+# Keep correct column order
+ordered_cols = ['Pclass','Age','SibSp','Parch','Fare',
+                'FamilySize','IsAlone','Sex_male','Embarked_Q','Embarked_S']
 
-# SCALE WITHOUT FEATURE NAME CHECK
-num_cols = ['Pclass', 'Age', 'SibSp', 'Parch', 'Fare', 'FamilySize', 'IsAlone']
-scaled_values = scaler.transform(input_data[num_cols].values)   # <--- FIX HERE
-input_data[num_cols] = scaled_values
+input_data = input_data[ordered_cols]
 
-# Prediction
+# Bypass feature name checking
+scaled = scaler.transform(input_data[num_cols].to_numpy())
+input_data[num_cols] = scaled
+
+# Predict
 if st.button("Predict"):
     pred = model.predict(input_data)[0]
 
