@@ -47,14 +47,15 @@ body {
 # ====================
 with st.sidebar:
     st.image("https://i.imgur.com/hsYVx4T.png", use_column_width=True)
-    st.header("About App")
+    st.header("About This Project")
     st.write("""
-    🚢 This app predicts whether a passenger  
-    would have **survived the Titanic disaster**  
-    using Machine Learning.
+    🚢 This Machine Learning app predicts Titanic passenger survival.
 
-    **Created by:** Vanisha  
-    **Model:** Random Forest  
+    **Created by:**  
+    🔹 *Vanisha Arun *  
+    🔹 *Vaithiyanathan C* 
+
+    **Tech:** Streamlit · ML · Python  
     """)
 
 # ====================
