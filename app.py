@@ -40,13 +40,16 @@ input_data = pd.DataFrame([{
     'Embarked_S': embarked_S
 }])
 
-# Keep correct column order
+# Correct column order
 ordered_cols = ['Pclass','Age','SibSp','Parch','Fare',
                 'FamilySize','IsAlone','Sex_male','Embarked_Q','Embarked_S']
 
 input_data = input_data[ordered_cols]
 
-# Bypass feature name checking
+# DEFINE num_cols HERE (missing earlier)
+num_cols = ['Pclass','Age','SibSp','Parch','Fare','FamilySize','IsAlone']
+
+# Bypass feature name check
 scaled = scaler.transform(input_data[num_cols].to_numpy())
 input_data[num_cols] = scaled
 
