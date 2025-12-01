@@ -45,12 +45,12 @@ ordered_columns = [
     'Pclass', 'Age', 'SibSp', 'Parch', 'Fare',
     'FamilySize', 'IsAlone', 'Sex_male', 'Embarked_Q', 'Embarked_S'
 ]
-
 input_data = input_data[ordered_columns]
 
-# Scale numeric columns
+# SCALE WITHOUT FEATURE NAME CHECK
 num_cols = ['Pclass', 'Age', 'SibSp', 'Parch', 'Fare', 'FamilySize', 'IsAlone']
-input_data[num_cols] = scaler.transform(input_data[num_cols])
+scaled_values = scaler.transform(input_data[num_cols].values)   # <--- FIX HERE
+input_data[num_cols] = scaled_values
 
 # Prediction
 if st.button("Predict"):
@@ -60,3 +60,4 @@ if st.button("Predict"):
         st.success("🟢 Passenger Survived!")
     else:
         st.error("🔴 Passenger Did NOT Survive.")
+
