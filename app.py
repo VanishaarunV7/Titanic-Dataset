@@ -8,25 +8,25 @@ scaler = joblib.load("titanic_scaler.pkl")
 
 st.title("🚢 Titanic Survival Prediction App")
 
-# User inputs
+# User input fields
 pclass = st.selectbox("Passenger Class", [1, 2, 3])
 sex = st.selectbox("Sex", ["male", "female"])
-age = st.number_input("Age", 1, 100, 25)
-sibsp = st.number_input("Siblings/Spouses Aboard", 0, 10, 0)
-parch = st.number_input("Parents/Children Aboard", 0, 10, 0)
-fare = st.number_input("Fare", 0.0, 600.0, 32.2)
+age = st.number_input("Age", min_value=1, max_value=100, value=25)
+sibsp = st.number_input("Siblings/Spouses Aboard", min_value=0, max_value=10, value=0)
+parch = st.number_input("Parents/Children Aboard", min_value=0, max_value=10, value=0)
+fare = st.number_input("Fare", min_value=0.0, max_value=600.0, value=32.2)
 embarked = st.selectbox("Embarked", ["C", "Q", "S"])
 
-# One-hot encoding
+# Encoding categorical features manually
 sex_male = 1 if sex == "male" else 0
 embarked_Q = 1 if embarked == "Q" else 0
 embarked_S = 1 if embarked == "S" else 0
 
-# New features
+# New feature engineering (same as training)
 familysize = sibsp + parch
 isalone = 1 if familysize == 0 else 0
 
-# Input data (same as training columns)
+# Input DataFrame
 input_data = pd.DataFrame([{
     'Pclass': pclass,
     'Age': age,
@@ -40,8 +40,16 @@ input_data = pd.DataFrame([{
     'Embarked_S': embarked_S
 }])
 
-# Scale numeric columns
-num_cols = ['Pclass','Age','SibSp','Parch','Fare','FamilySize','IsAlone']
+# Scale numerical columns
+num_cols = ['Pclass', 'Age', 'SibSp', 'Parch', 'Fare', 'FamilySize', 'IsAlone']
 input_data[num_cols] = scaler.transform(input_data[num_cols])
 
-if st.button("Predict"
+# Predict button
+if st.button("Predict"):
+    pred = model.predict(input_data)[0]
+    
+    if pred == 1:
+        st.success("🟢 Passenger Survived!")
+    else:
+        st.error("🔴 Passenger Did NOT Survive.")
+
