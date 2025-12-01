@@ -53,7 +53,7 @@ with st.sidebar:
 
     **Created by:**  
     🔹 *Vanisha Arun *  
-    🔹 *Vaithiyanathan C* 
+    🔹 *Vaithiyanathan C * 
 
     **Tech:** Streamlit · ML · Python  
     """)
