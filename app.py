@@ -82,25 +82,76 @@ body {
 </style>
 """, unsafe_allow_html=True)
 
-# ===================================
-# SIDEBAR
-# ===================================
+# ======================
+# SUPER PROFESSIONAL SIDEBAR
+# ======================
 with st.sidebar:
-    st.header("About This Project ✨")
+
+    st.markdown("<h2 style='color:#38bdf8; font-weight:bold;'>📘 About This Project</h2>", unsafe_allow_html=True)
     st.write("""
-    🚢 **Titanic Survival Prediction App**  
-    Built using **Machine Learning + Streamlit**.
-
-    **Team:**  
-    🔹 Vanisha Arun  
-    🔹 Vaithiyanathan C
-
-    **Features:**  
-    ✔ Clean UI  
-    ✔ Modern design  
-    ✔ Live prediction  
-    ✔ Random Forest ML Model  
+This is a Machine Learning web application that predicts  
+**Titanic Passenger Survival** using a **Random Forest Model**.  
+Developed as a team project with a fully animated modern UI.
     """)
+
+    st.markdown("---")
+
+    # Tools Section
+    st.markdown("<h3 style='color:#60a5fa;'>🛠 Tools & Technologies</h3>", unsafe_allow_html=True)
+    st.write("""
+- **Python 3.10**
+- **Pandas** (Data Processing)  
+- **Scikit-Learn** (Machine Learning)  
+- **Random Forest Classifier**  
+- **StandardScaler**  
+- **Streamlit** (UI & Deployment)  
+- **GitHub** (Version Control)  
+- **Streamlit Cloud** (Hosting)  
+    """)
+
+    st.markdown("---")
+
+    # ML Workflow
+    st.markdown("<h3 style='color:#60a5fa;'>🔬 ML Workflow</h3>", unsafe_allow_html=True)
+    st.write("""
+1. Data Cleaning  
+2. Feature Engineering  
+3. One-Hot Encoding  
+4. Scaling  
+5. Model Training (Random Forest)  
+6. Saving Model & Scaler  
+7. Deploy via Streamlit  
+    """)
+
+    st.markdown("---")
+
+    # Team Section
+    st.markdown("<h3 style='color:#60a5fa;'>👥 Team Members</h3>", unsafe_allow_html=True)
+
+    st.markdown("""
+### 🟩 Vaithiyanathan C  
+- ML Model Developer  
+- Feature Engineering  
+- Model Training & Optimization  
+""")
+    
+    st.markdown("""
+### 🟦 Vanisha Arun  
+- Data pre processing  
+- UI/UX & App Design  
+- Deployment & GitHub  
+""")
+
+    st.markdown("---")
+
+🐳 **Live App:**  
+- Available through Streamlit Cloud  
+""")
+
+    st.markdown("---")
+
+    st.markdown("<p style='text-align:center; color:#a5f3fc;'> Project by Vaithiyanathan C & Vanisha arun </p>", unsafe_allow_html=True)
+
 
 # ===================================
 # LOAD MODEL + SCALER
@@ -184,9 +235,64 @@ if st.button("🔮 Predict Survival"):
 # FOOTER
 # ===================================
 st.markdown(
-    "<div class='footer'>✨ Project by Vanisha & Vaithiyanathan ✨</div>",
+    "<div class='footer'> Project by Vaithiyanathan C & Vanisha Arun</div>",
     unsafe_allow_html=True
 )
 
 # FLOATING TITANIC ICON
 st.markdown("<div class='floating-icon'>🚢</div>", unsafe_allow_html=True)
+
+# ======================
+# ANIMATED BACKGROUND CSS
+# ======================
+st.markdown("""
+<style>
+
+body {
+    background: linear-gradient(135deg, #0f172a, #1e293b, #0f172a);
+    background-size: 400% 400%;
+    animation: gradientMove 12s ease infinite;
+    color: white;
+    overflow-x: hidden;
+}
+
+/* Smooth Gradient Animation */
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Floating particle bubbles */
+.particle {
+    position: fixed;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.08);
+    animation: floatUp linear infinite;
+}
+
+@keyframes floatUp {
+    0% { transform: translateY(0px); opacity: 0.2; }
+    100% { transform: translateY(-900px); opacity: 0; }
+}
+
+/* Create random particle sizes + animation delays */
+#particle1 { width: 12px; height: 12px; left: 10%; animation-duration: 16s; }
+#particle2 { width: 8px; height: 8px; left: 25%; animation-duration: 12s; }
+#particle3 { width: 15px; height: 15px; left: 40%; animation-duration: 14s; }
+#particle4 { width: 10px; height: 10px; left: 55%; animation-duration: 18s; }
+#particle5 { width: 20px; height: 20px; left: 70%; animation-duration: 22s; }
+#particle6 { width: 7px; height: 7px; left: 85%; animation-duration: 20s; }
+
+</style>
+
+<!-- Particle elements -->
+<div id="particle1" class="particle"></div>
+<div id="particle2" class="particle"></div>
+<div id="particle3" class="particle"></div>
+<div id="particle4" class="particle"></div>
+<div id="particle5" class="particle"></div>
+<div id="particle6" class="particle"></div>
+
+""", unsafe_allow_html=True)
+
