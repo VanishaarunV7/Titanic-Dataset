@@ -118,66 +118,90 @@ input, select {
 # ===================================
 st.markdown("""
 <style>
+
+/* SIDEBAR BACKGROUND */
 .sidebar .sidebar-content {
-    background: rgba(255,255,255,0.6);
-    backdrop-filter: blur(18px);
-    border-right: 1px solid rgba(200,200,200,0.5);
+    background: linear-gradient(180deg, #3b82f6, #1e40af, #0f172a);
+    background-size: 300% 300%;
+    animation: sidebarGlow 8s ease infinite;
+    padding: 20px;
+    color: white !important;
+    border-right: 2px solid rgba(255,255,255,0.2);
 }
 
-.sidebar-title {
-    color:#2563eb;
-    font-size: 26px;
-    font-weight:bold;
+/* Gradient animation */
+@keyframes sidebarGlow {
+    0% { background-position: 0% 0%; }
+    50% { background-position: 100% 100%; }
+    100% { background-position: 0% 0%; }
 }
 
-.section-title {
-    color:#3b82f6;
-    font-size:20px;
-    margin-top:15px;
-}
-
-.glass-card {
-    background: rgba(255,255,255,0.7);
-    border:1px solid rgba(200,200,200,0.6);
-    border-radius:12px;
-    padding:12px;
-    margin-bottom:15px;
-}
-
-.icon-btn {
-    display:inline-block;
-    padding:8px 14px;
-    margin:6px 0;
-    border-radius:10px;
-    background:white;
-    border:1px solid #cbd5e1;
-    text-decoration:none;
-    color:#1e293b;
-}
-.icon-btn:hover {
-    background:#e0f2fe;
-}
-.team-name { font-weight:bold; color:#2563eb; }
-.team-role { color:#475569; font-size:14px; }
-</style>
-""", unsafe_allow_html=True)
-st.markdown("""
-<style>
+/* Make ALL text inside sidebar white */
 .sidebar .sidebar-content * {
     color: white !important;
 }
+
+/* Section titles */
 .section-title {
-    color: #93c5fd !important;
+    font-size: 20px !important;
+    font-weight: 700 !important;
+    margin-top: 15px;
+    color: #e0f2fe !important;
+    text-shadow: 0 0 8px #93c5fd;
 }
-.team-name {
-    color: #7dd3fc !important;
+
+/* Main sidebar title */
+.sidebar-title {
+    font-size: 26px !important;
+    font-weight: bold !important;
+    margin-bottom: 10px;
+    color: #ffffff !important;
+    text-shadow: 0 0 15px #bae6fd;
 }
-.team-role {
-    color: #cbd5e1 !important;
-}
+
+/* Glass card blocks */
 .glass-card {
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.25);
+    padding: 12px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    backdrop-filter: blur(10px);
+}
+
+/* Team names */
+.team-name {
+    font-size: 18px;
+    font-weight: bold;
+    color: #bbf7d0 !important;
+}
+
+/* Team role text */
+.team-role {
+    font-size: 14px;
+    color: #e0f2fe !important;
+}
+
+/* Social buttons */
+.icon-btn {
+    display: block;
+    padding: 10px;
+    border-radius: 10px;
+    text-decoration: none;
+    background: rgba(255,255,255,0.2);
+    border: 1px solid rgba(255,255,255,0.4);
+    margin-top: 6px;
+    text-align: center;
+    transition: 0.3s;
     color: white !important;
 }
+
+.icon-btn:hover {
+    background: rgba(255,255,255,0.35);
+    transform: scale(1.05);
+    box-shadow: 0 0 10px #93c5fd;
+}
+
 </style>
 """, unsafe_allow_html=True)
 
