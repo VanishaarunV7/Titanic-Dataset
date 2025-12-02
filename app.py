@@ -82,76 +82,142 @@ body {
 </style>
 """, unsafe_allow_html=True)
 
-# ======================
-# SUPER PROFESSIONAL SIDEBAR
-# ======================
+# ==========================
+# SUPER PREMIUM STYLISH SIDEBAR
+# ==========================
+
+# Sidebar custom CSS
+st.markdown("""
+<style>
+
+.sidebar .sidebar-content {
+    background: linear-gradient(180deg, #0f172a, #1e293b, #0f172a);
+    animation: bgMove 10s ease infinite;
+    background-size: 200% 200%;
+    padding: 20px;
+}
+
+@keyframes bgMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Stylish headings */
+.sidebar-title {
+    font-size: 26px;
+    color: #38bdf8;
+    font-weight: bold;
+    text-shadow: 0 0 15px #60a5fa;
+    margin-bottom: 10px;
+}
+
+/* Section headers */
+.section-title {
+    font-size: 20px;
+    margin-top: 18px;
+    color: #93c5fd;
+    font-weight: bold;
+    text-shadow: 0 0 8px #38bdf8;
+}
+
+/* Glass card blocks */
+.glass-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 12px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    backdrop-filter: blur(10px);
+}
+
+/* Stylish icon buttons */
+.icon-btn {
+    display: inline-block;
+    padding: 10px 15px;
+    margin-right: 8px;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.2);
+    text-decoration: none;
+    color: #e0f2fe;
+    transition: 0.3s;
+    font-size: 15px;
+}
+.icon-btn:hover {
+    background: rgba(96,165,250,0.3);
+    transform: scale(1.08);
+    box-shadow: 0 0 8px #38bdf8;
+}
+
+.team-name {
+    font-size: 18px;
+    font-weight: bold;
+    color: #7dd3fc;
+}
+
+.team-role {
+    color: #cbd5e1;
+    font-size: 14px;
+    margin-bottom: 6px;
+}
+
+</style>
+""", unsafe_allow_html=True)
+
+
+# SIDEBAR CONTENT
 with st.sidebar:
 
-    st.markdown("<h2 style='color:#38bdf8; font-weight:bold;'>📘 About This Project</h2>", unsafe_allow_html=True)
-    st.write("""
-This is a Machine Learning web application that predicts  
-**Titanic Passenger Survival** using a **Random Forest Model**.  
-Developed as a team project with a fully animated modern UI.
-    """)
+    st.markdown("<p class='sidebar-title'>🚢 Titanic ML Project</p>", unsafe_allow_html=True)
 
-    st.markdown("---")
+    st.markdown("<p class='section-title'>📘 About</p>", unsafe_allow_html=True)
+    st.markdown("<div class='glass-card'>This is an advanced Machine Learning project predicting Titanic passenger survival using a Random Forest model — with a beautifully animated UI.</div>", unsafe_allow_html=True)
 
-    # Tools Section
-    st.markdown("<h3 style='color:#60a5fa;'>🛠 Tools & Technologies</h3>", unsafe_allow_html=True)
-    st.write("""
-- **Python 3.10**
-- **Pandas** (Data Processing)  
-- **Scikit-Learn** (Machine Learning)  
-- **Random Forest Classifier**  
-- **StandardScaler**  
-- **Streamlit** (UI & Deployment)  
-- **GitHub** (Version Control)  
-- **Streamlit Cloud** (Hosting)  
-    """)
-
-    st.markdown("---")
-
-    # ML Workflow
-    st.markdown("<h3 style='color:#60a5fa;'>🔬 ML Workflow</h3>", unsafe_allow_html=True)
-    st.write("""
-1. Data Cleaning  
-2. Feature Engineering  
-3. One-Hot Encoding  
-4. Scaling  
-5. Model Training (Random Forest)  
-6. Saving Model & Scaler  
-7. Deploy via Streamlit  
-    """)
-
-    st.markdown("---")
-
-    # Team Section
-    st.markdown("<h3 style='color:#60a5fa;'>👥 Team Members</h3>", unsafe_allow_html=True)
-
+    st.markdown("<p class='section-title'>🛠 Tools Used</p>", unsafe_allow_html=True)
     st.markdown("""
-### 🟩 Vaithiyanathan C  
-- ML Model Developer  
-- Feature Engineering  
-- Model Training & Optimization  
-""")
-    
+<div class='glass-card'>
+• Python  
+• Pandas  
+• Scikit-Learn  
+• Random Forest  
+• Streamlit  
+• GitHub  
+• Cloud Deployment  
+</div>
+""", unsafe_allow_html=True)
+
+    st.markdown("<p class='section-title'>🔬 ML Workflow</p>", unsafe_allow_html=True)
     st.markdown("""
-### 🟦 Vanisha Arun  
-- Data pre processing  
-- UI/UX & App Design  
-- Deployment & GitHub  
-""")
+<div class='glass-card'>
+1️⃣ Data Cleaning  
+2️⃣ Feature Engineering  
+3️⃣ Encoding  
+4️⃣ Scaling  
+5️⃣ Model Training  
+6️⃣ Deployment  
+</div>
+""", unsafe_allow_html=True)
 
-    st.markdown("---")
+    st.markdown("<p class='section-title'>👥 Team</p>", unsafe_allow_html=True)
+    st.markdown("""
+<div class='glass-card'>
+<p class='team-name'>🟦 Vanisha Arun</p>
+<p class='team-role'>ML Developer, UI/UX, Deployment</p>
 
-🐳 **Live App:**  
-- Available through Streamlit Cloud  
-""")
+<p class='team-name'>🟩 Vaithiyanathan C</p>
+<p class='team-role'>Data Processing, Feature Engineering, Model Training</p>
+</div>
+""", unsafe_allow_html=True)
 
-    st.markdown("---")
+    st.markdown("<p class='section-title'>🌐 Connect</p>", unsafe_allow_html=True)
+    st.markdown("""
+<a class="icon-btn" href="https://github.com/VanishaarunV7" target="_blank">🐙 GitHub</a>
+<a class="icon-btn" href="https://linkedin.com" target="_blank">🔗 LinkedIn</a>
+<a class="icon-btn" href="mailto:yourmail@example.com" target="_blank">✉️ Mail</a>
+""", unsafe_allow_html=True)
 
-    st.markdown("<p style='text-align:center; color:#a5f3fc;'> Project by Vaithiyanathan C & Vanisha arun </p>", unsafe_allow_html=True)
-
+    st.markdown("<br><center style='color:#7dd3fc;'>✨ Created by Vanisha & Vaithiyanathan ✨</center>", unsafe_allow_html=True)
 
 # ===================================
 # LOAD MODEL + SCALER
