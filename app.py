@@ -6,11 +6,14 @@ import time
 # ===================================
 # PAGE CONFIG
 # ===================================
-st.set_page_config(
-    page_title="Titanic Survival Predictor",
-    page_icon="🚢",
-    layout="centered"
-)
+st.markdown("""
+<h1 style='text-align:center; color:#2563eb; text-shadow:0 0 10px #bfdbfe;'>
+🚢 Titanic Survival Predictor
+</h1>
+<p style='text-align:center; color:#475569; font-size:18px; margin-bottom:10px;'>
+Predict survival probability using Machine Learning
+</p>
+""", unsafe_allow_html=True)
 
 # ===================================
 # LIGHT THEME + ANIMATED BACKGROUND
