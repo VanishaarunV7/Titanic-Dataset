@@ -11,6 +11,64 @@ st.set_page_config(
     page_icon="🚢",
     layout="centered"
 )
+# ===========================
+# FULL LIGHT THEME + ANIMATION
+# ===========================
+st.markdown("""
+<style>
+
+body {
+    background: linear-gradient(135deg, #f6f9fc, #e9f3ff, #ffffff);
+    background-size: 300% 300%;
+    animation: moveBg 12s ease infinite;
+    color: #1e293b;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Animated light gradient */
+@keyframes moveBg {
+    0% { background-position: 0% 0%; }
+    50% { background-position: 100% 100%; }
+    100% { background-position: 0% 0%; }
+}
+
+/* Light floating particle bubbles */
+.particle {
+    position: fixed;
+    border-radius: 50%;
+    background: rgba(100, 149, 237, 0.15);
+    animation: floatUp linear infinite;
+}
+
+@keyframes floatUp {
+    0% { transform: translateY(0px); opacity: 0.7; }
+    100% { transform: translateY(-900px); opacity: 0; }
+}
+
+#p1 { width: 12px; height: 12px; left: 10%; animation-duration: 25s; }
+#p2 { width: 8px; height: 8px; left: 25%; animation-duration: 20s; }
+#p3 { width: 15px; height: 15px; left: 40%; animation-duration: 22s; }
+#p4 { width: 10px; height: 10px; left: 55%; animation-duration: 30s; }
+#p5 { width: 20px; height: 20px; left: 70%; animation-duration: 32s; }
+#p6 { width: 7px; height: 7px; left: 85%; animation-duration: 28s; }
+
+/* Input boxes light mode */
+input, select, .stSelectbox, .stTextInput {
+    background-color: white !important;
+    color: #1e293b !important;
+}
+
+</style>
+
+<div id="p1" class="particle"></div>
+<div id="p2" class="particle"></div>
+<div id="p3" class="particle"></div>
+<div id="p4" class="particle"></div>
+<div id="p5" class="particle"></div>
+<div id="p6" class="particle"></div>
+
+""", unsafe_allow_html=True)
+
 
 # ===================================
 # CUSTOM CSS — GRADIENT BG + CARDS + ANIMATION
@@ -81,6 +139,40 @@ body {
 
 </style>
 """, unsafe_allow_html=True)
+<style>
+.sidebar .sidebar-content {
+    background: rgba(255,255,255,0.55);
+    backdrop-filter: blur(18px);
+    border-right: 1px solid rgba(180,180,180,0.4);
+    color:#1e293b;
+}
+
+.sidebar-title {
+    color:#2563eb;
+    text-shadow: 0 0 5px #93c5fd;
+}
+
+.section-title {
+    color:#3b82f6;
+}
+
+.glass-card {
+    background: rgba(255,255,255,0.7);
+    border:1px solid rgba(200,200,200,0.6);
+    border-radius:12px;
+    padding:12px;
+}
+
+.icon-btn {
+    background: rgba(255,255,255,0.8);
+    color:#1e293b;
+    border:1px solid rgba(200,200,200,0.7);
+}
+.icon-btn:hover{
+    background:#e0f2fe;
+}
+</style>
+
 
 # ==========================
 # SUPER PREMIUM STYLISH SIDEBAR
@@ -228,6 +320,25 @@ with st.sidebar:
     """, unsafe_allow_html=True)
 
     st.markdown("<br><center style='color:#7dd3fc;'>✨ Created by Vanisha & Vaithiyanathan ✨</center>", unsafe_allow_html=True)
+# =====================
+# MAIN PAGE CONTENT
+# =====================
+
+# ⭐⭐ Paste here (Step 3 header) ⭐⭐
+st.markdown("""
+<h1 style='text-align:center; color:#2563eb; text-shadow:0 0 10px #bfdbfe;'>
+🚢 Titanic Survival Predictor
+</h1>
+<p style='text-align:center; color:#475569;'>
+Predict survival probability using Machine Learning
+</p>
+""", unsafe_allow_html=True)
+
+# After this → your form fields start
+pclass = st.selectbox("Passenger Class", [1,2,3])
+gender = st.selectbox("Sex", ["male","female"])
+age = st.number_input("Age", min_value=0, max_value=100)
+...
 
 # ===================================
 # LOAD MODEL + SCALER
