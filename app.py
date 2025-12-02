@@ -158,6 +158,26 @@ st.markdown("""
 .team-role { color:#475569; font-size:14px; }
 </style>
 """, unsafe_allow_html=True)
+st.markdown("""
+<style>
+.sidebar .sidebar-content * {
+    color: white !important;
+}
+.section-title {
+    color: #93c5fd !important;
+}
+.team-name {
+    color: #7dd3fc !important;
+}
+.team-role {
+    color: #cbd5e1 !important;
+}
+.glass-card {
+    color: white !important;
+}
+</style>
+""", unsafe_allow_html=True)
+
 
 # ===================================
 # SIDEBAR CONTENT
@@ -190,9 +210,9 @@ with st.sidebar:
     st.markdown("""
     <div class='glass-card'>
     <p class='team-name'>🟦 Vanisha Arun</p>
-    <p class='team-role'>ML Developer, UI/UX, Deployment</p>
+    <p class='team-role'>Data preprocessing, UI/UX, Deployment</p>
     <p class='team-name'>🟩 Vaithiyanathan C</p>
-    <p class='team-role'>Data Processing, Feature Engineering</p>
+    <p class='team-role'>Ml developer,Train model,Feature Engineering</p>
     </div>
     """, unsafe_allow_html=True)
 
