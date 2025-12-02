@@ -1,3 +1,4 @@
+hatttt
 import streamlit as st
 import pandas as pd
 import joblib
@@ -211,11 +212,16 @@ with st.sidebar:
 """, unsafe_allow_html=True)
 
     st.markdown("<p class='section-title'>🌐 Connect</p>", unsafe_allow_html=True)
-    st.markdown("""
-<a class="icon-btn" href="https://github.com/VanishaarunV7" target="_blank">🐙 GitHub</a>
-<a class="icon-btn" href="https://linkedin.com" target="_blank">🔗 LinkedIn</a>
-<a class="icon-btn" href="mailto:yourmail@example.com" target="_blank">✉️ Mail</a>
+
+st.markdown("""
+<a class="icon-btn" href="https://github.com/VanishaarunV7" target="_blank">🐙 GitHub Vanisha</a>
+<a class="icon-btn" href="https://github.com/Vaithiy-777" target="_blank">🐙 GitHub Vaithiyanathan</a>
+<a class="icon-btn" href="www.linkedin.com/in/vanishaarun7105" target="_blank">🔗 LinkedIn Vanisha</a>
+<a class="icon-btn" href="www.linkedin.com/in/vaithiy706" target="_blank">🔗 LinkedIn Vaithiyanathan</a>
+<a class="icon-btn" href="vanisharuncse23@gmail.com" target="_blank">✉️ Mail Vanisha</a>
+<a class="icon-btn" href="vaiithiycm00@gmail.com" target="_blank">✉️ Mail Vaithiyanathan</a>
 """, unsafe_allow_html=True)
+
 
     st.markdown("<br><center style='color:#7dd3fc;'>✨ Created by Vanisha & Vaithiyanathan ✨</center>", unsafe_allow_html=True)
 
