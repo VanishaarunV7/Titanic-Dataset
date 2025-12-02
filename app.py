@@ -222,8 +222,6 @@ st.markdown("""
 <a class="icon-btn" href="vaiithiycm00@gmail.com" target="_blank">✉️ Mail Vaithiyanathan</a>
 """, unsafe_allow_html=True)
 
-st.markdown("<br><center style='color:#7dd3fc;'>✨ Created by Vanisha & Vaithiyanathan ✨</center>", unsafe_allow_html=True)
-
 # ===================================
 # LOAD MODEL + SCALER
 # ===================================
