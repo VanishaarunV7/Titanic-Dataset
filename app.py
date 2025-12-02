@@ -165,61 +165,69 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-
 # SIDEBAR CONTENT
 with st.sidebar:
 
     st.markdown("<p class='sidebar-title'>🚢 Titanic ML Project</p>", unsafe_allow_html=True)
 
     st.markdown("<p class='section-title'>📘 About</p>", unsafe_allow_html=True)
-    st.markdown("<div class='glass-card'>This is an advanced Machine Learning project predicting Titanic passenger survival using a Random Forest model — with a beautifully animated UI.</div>", unsafe_allow_html=True)
+    st.markdown("""
+    <div class='glass-card'>
+    This is an advanced Machine Learning project predicting Titanic passenger survival 
+    using a Random Forest model — with a beautifully animated UI.
+    </div>
+    """, unsafe_allow_html=True)
 
     st.markdown("<p class='section-title'>🛠 Tools Used</p>", unsafe_allow_html=True)
     st.markdown("""
-<div class='glass-card'>
-• Python  
-• Pandas  
-• Scikit-Learn  
-• Random Forest  
-• Streamlit  
-• GitHub  
-• Cloud Deployment  
-</div>
-""", unsafe_allow_html=True)
+    <div class='glass-card'>
+    • Python  
+    • Pandas  
+    • Scikit-Learn  
+    • Random Forest  
+    • Streamlit  
+    • GitHub  
+    • Cloud Deployment  
+    </div>
+    """, unsafe_allow_html=True)
 
     st.markdown("<p class='section-title'>🔬 ML Workflow</p>", unsafe_allow_html=True)
     st.markdown("""
-<div class='glass-card'>
-1️⃣ Data Cleaning  
-2️⃣ Feature Engineering  
-3️⃣ Encoding  
-4️⃣ Scaling  
-5️⃣ Model Training  
-6️⃣ Deployment  
-</div>
-""", unsafe_allow_html=True)
+    <div class='glass-card'>
+    1️⃣ Data Cleaning  
+    2️⃣ Feature Engineering  
+    3️⃣ Encoding  
+    4️⃣ Scaling  
+    5️⃣ Model Training  
+    6️⃣ Deployment  
+    </div>
+    """, unsafe_allow_html=True)
 
     st.markdown("<p class='section-title'>👥 Team</p>", unsafe_allow_html=True)
     st.markdown("""
-<div class='glass-card'>
-<p class='team-name'>🟦 Vanisha Arun</p>
-<p class='team-role'>ML Developer, UI/UX, Deployment</p>
+    <div class='glass-card'>
+    <p class='team-name'>🟦 Vanisha Arun</p>
+    <p class='team-role'>ML Developer, UI/UX, Deployment</p>
 
-<p class='team-name'>🟩 Vaithiyanathan C</p>
-<p class='team-role'>Data Processing, Feature Engineering, Model Training</p>
-</div>
-""", unsafe_allow_html=True)
+    <p class='team-name'>🟩 Vaithiyanathan C</p>
+    <p class='team-role'>Data Processing, Feature Engineering, Model Training</p>
+    </div>
+    """, unsafe_allow_html=True)
 
     st.markdown("<p class='section-title'>🌐 Connect</p>", unsafe_allow_html=True)
 
-st.markdown("""
-<a class="icon-btn" href="https://github.com/VanishaarunV7" target="_blank">🐙 GitHub Vanisha</a>
-<a class="icon-btn" href="https://github.com/Vaithiy-777" target="_blank">🐙 GitHub Vaithiyanathan</a>
-<a class="icon-btn" href="www.linkedin.com/in/vanishaarun7105" target="_blank">🔗 LinkedIn Vanisha</a>
-<a class="icon-btn" href="www.linkedin.com/in/vaithiy706" target="_blank">🔗 LinkedIn Vaithiyanathan</a>
-<a class="icon-btn" href="vanisharuncse23@gmail.com" target="_blank">✉️ Mail Vanisha</a>
-<a class="icon-btn" href="vaiithiycm00@gmail.com" target="_blank">✉️ Mail Vaithiyanathan</a>
-""", unsafe_allow_html=True)
+    st.markdown("""
+    <a class="icon-btn" href="https://github.com/VanishaarunV7" target="_blank">🐙 GitHub Vanisha</a>
+    <a class="icon-btn" href="https://github.com/Vaithiy-777" target="_blank">🐙 GitHub Vaithiyanathan</a>
+    <br><br>
+    <a class="icon-btn" href="https://linkedin.com/in/vanishaarun7105" target="_blank">🔗 LinkedIn Vanisha</a>
+    <a class="icon-btn" href="https://linkedin.com/in/vaithiy706" target="_blank">🔗 LinkedIn Vaithiyanathan</a>
+    <br><br>
+    <a class="icon-btn" href="mailto:vanisharuncse23@gmail.com" target="_blank">✉️ Mail Vanisha</a>
+    <a class="icon-btn" href="mailto:vaiithiycm00@gmail.com" target="_blank">✉️ Mail Vaithiyanathan</a>
+    """, unsafe_allow_html=True)
+
+    st.markdown("<br><center style='color:#7dd3fc;'>✨ Created by Vanisha & Vaithiyanathan ✨</center>", unsafe_allow_html=True)
 
 # ===================================
 # LOAD MODEL + SCALER
